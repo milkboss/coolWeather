@@ -3,7 +3,7 @@
     package="com.coolweather.app"
     android:versionCode="1"
     android:versionName="1.0" >
-<!--爬爬爬爬偏偏-->
+<!--爬爬爬爬偏偏aabbcc-->
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
