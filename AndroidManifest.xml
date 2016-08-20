@@ -3,7 +3,7 @@
     package="com.coolweather.app"
     android:versionCode="1"
     android:versionName="1.0" >
-<!--我的修改-->
+<!--没有东西发生的修改-->
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
