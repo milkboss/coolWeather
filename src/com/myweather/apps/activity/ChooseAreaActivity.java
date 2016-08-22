@@ -1,16 +1,16 @@
-package com.coolweather.app.activity;
+package com.myweather.apps.activity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.coolweather.app.R;
-import com.coolweather.app.db.CoolWeatherDB;
-import com.coolweather.app.model.City;
-import com.coolweather.app.model.County;
-import com.coolweather.app.model.Province;
-import com.coolweather.app.util.HttpCallbackListener;
-import com.coolweather.app.util.HttpUtil;
-import com.coolweather.app.util.Utility;
+import com.myweather.appss.R;
+import com.myweather.apps.db.CoolWeatherDB;
+import com.myweather.apps.model.City;
+import com.myweather.apps.model.County;
+import com.myweather.apps.model.Province;
+import com.myweather.apps.util.HttpCallbackListener;
+import com.myweather.apps.util.HttpUtil;
+import com.myweather.apps.util.Utility;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -27,6 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import net.youmi.android.AdManager;
 
 public class ChooseAreaActivity extends Activity {
 	public static final int LEVEL_PROVINCE=0;
@@ -75,6 +76,13 @@ public class ChooseAreaActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+	//进行有米广告的初始化
+AdManager.getInstance(this).init
+("077596f5e563e621", "39cef583dee2558e"
+		, false, true);
+//---------------------		
+		
+		
 isFromWeatherActivity=getIntent().getBooleanExtra("from_weather_activity"
 		, false);
 

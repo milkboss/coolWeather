@@ -1,11 +1,11 @@
-package com.coolweather.app.activity;
+package com.myweather.apps.activity;
 
 
-import com.coolweather.app.R;
-import com.coolweather.app.service.AutoUpdateService;
-import com.coolweather.app.util.HttpCallbackListener;
-import com.coolweather.app.util.HttpUtil;
-import com.coolweather.app.util.Utility;
+import com.myweather.appss.R;
+import com.myweather.apps.service.AutoUpdateService;
+import com.myweather.apps.util.HttpCallbackListener;
+import com.myweather.apps.util.HttpUtil;
+import com.myweather.apps.util.Utility;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,9 +16,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import net.youmi.android.normal.banner.BannerManager;
 
 public class WeatherActivity extends Activity implements OnClickListener {
    
@@ -87,6 +89,18 @@ public class WeatherActivity extends Activity implements OnClickListener {
 			//没有县级代号时就显示本地天气
 			showWeather();
 		}
+		//添加有米广告的相关信息
+		//实例化广告条
+		// 实例化广告条
+		View adView = BannerManager.getInstance(this).getBanner(this);
+
+		// 获取要嵌入广告条的布局
+		LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
+
+		// 将广告条加入到布局中
+		adLayout.addView(adView);
+		
+		
 		
 	}
 	/**

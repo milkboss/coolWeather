@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.coolweather.app"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.myweather.appss"
+    android:versionCode="2"
+    android:versionName="1.0.1" >
 <!--我的修改-->
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 <uses-permission android:name="android.permission.INTERNET"/>
-    <application
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>   
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>   
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+<uses-permission android:name="android.permission.GET_TASKS"/>
+
+<application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"      
+        >
+        <!-- 配置广告的相关属性 -->
+  <activity 
+      android:name="net.youmi.android.AdBrowser"
+      android:configChanges="keyboard|keyboardHidden|orientation"
+      android:theme="@android:style/Theme.Light.NoTitleBar" 
+      >
+  </activity>      
+    <service 
+        android:name="net.youmi.android.AdService"
+        android:exported="false"
+        ></service>
+   <receiver 
+       android:name="net.youmi.android.AdReceiver">
+       <intent-filter>
+           <action android:name="android.intent.action.PACKAGE_ADDED"/>
+      <data android:scheme="package"/>
+           </intent-filter>
+       </receiver> 
+    <!-- end -->
+    
         <activity 
-            android:name="com.coolweather.app.activity.WeatherActivity"
+            android:name="com.myweather.apps.activity.WeatherActivity"
             ></activity>
         <activity
-            android:name="com.coolweather.app.activity.ChooseAreaActivity"
+            android:name="com.myweather.apps.activity.ChooseAreaActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,10 +55,10 @@
         </activity>
         
         <service 
-            android:name="com.coolweather.app.service.AutoUpdateService"
+            android:name="com.myweather.apps.service.AutoUpdateService"
             ></service>
         <receiver 
-            android:name="com.coolweather.app.receiver.AutoUpdateReceive"
+            android:name="com.myweather.apps.receiver.AutoUpdateReceive"
             ></receiver>
         
     </application>
